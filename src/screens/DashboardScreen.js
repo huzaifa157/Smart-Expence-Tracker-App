@@ -1,10 +1,9 @@
-// DashboardScreen.js
 import React, { useState } from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
   Dimensions, Modal, TextInput, Alert, KeyboardAvoidingView, Platform,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import ScreenWrapper from '../utils/ScreenWrapper';
 import Svg, { Path, Circle, Rect, Polyline, Line } from 'react-native-svg';
 import { useApp }   from '../context/AppContext';

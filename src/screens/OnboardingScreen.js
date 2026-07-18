@@ -1,10 +1,9 @@
-// OnboardingScreen.js
 import React, { useState, useRef } from 'react';
 import {
   View, Text, TouchableOpacity, StyleSheet,
   Animated, Dimensions, StatusBar,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import Svg, { Path, Circle, Rect, Line, Polyline, Defs, RadialGradient, Stop, Ellipse } from 'react-native-svg';
 import ScreenWrapper from '../utils/ScreenWrapper';
 import { useApp } from '../context/AppContext';

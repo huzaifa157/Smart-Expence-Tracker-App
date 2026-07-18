@@ -1,97 +1,55 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+This is an [**Expo**](https://expo.dev) project, converted from a bare React Native CLI app.
 
 # Getting Started
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
-
-## Step 1: Start Metro
-
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
-
-To start the Metro dev server, run the following command from the root of your React Native project:
+## Step 1: Install dependencies
 
 ```sh
-# Using npm
-npm start
-
-# OR using Yarn
-yarn start
+npm install
 ```
 
-## Step 2: Build and run your app
-
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
-
-### Android
+Then let Expo align every native package to versions that match your installed SDK:
 
 ```sh
-# Using npm
-npm run android
-
-# OR using Yarn
-yarn android
+npx expo install --fix
 ```
 
-### iOS
-
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
-
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+## Step 2: Start the dev server
 
 ```sh
-bundle install
+npx expo start
 ```
 
-Then, and every time you update your native dependencies, run:
+This opens Metro's dev tools in your browser. From there you can:
 
-```sh
-bundle exec pod install
-```
-
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
-
-```sh
-# Using npm
-npm run ios
-
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
+- Press `a` to open on a connected Android device/emulator
+- Press `i` to open on the iOS Simulator (macOS only)
+- Press `w` to open in a web browser
+- Scan the QR code with the **Expo Go** app on a physical device
 
 ## Step 3: Modify your app
 
-Now that you have successfully run the app, let's make changes!
+Open `App.tsx` and start editing — changes reload automatically via Fast Refresh.
 
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
+## Building native binaries
 
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
+This project uses the Expo managed workflow, so there are no `ios/` or `android/` folders checked into source control. When you're ready to build an installable app (rather than run inside Expo Go), use [EAS Build](https://docs.expo.dev/build/introduction/):
 
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
+```sh
+npm install -g eas-cli
+eas build --platform android
+eas build --platform ios
+```
 
-## Congratulations! :tada:
+If you need direct access to the native Xcode/Android Studio projects, run:
 
-You've successfully run and modified your React Native App. :partying_face:
+```sh
+npx expo prebuild
+```
 
-### Now what?
+## Learn More
 
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+- [Expo documentation](https://docs.expo.dev) — guides and API reference
+- [Expo Router](https://docs.expo.dev/router/introduction/) — file-based navigation, if you want to migrate off React Navigation later
+- [EAS Build](https://docs.expo.dev/build/introduction/) — cloud builds for iOS and Android
+- [Upgrading the Expo SDK](https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/)

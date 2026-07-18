@@ -1,9 +1,4 @@
-// SignUpScreen.js
-// Registration screen. New users fill in name, email, password, confirm password
-// and agree to terms. On success → REGISTER_USER + LOGIN (isNew: true) → Onboarding.
-// Social sign-up via Google/Apple also lands on Onboarding for new users.
-
-import React, {useState, useRef} from 'react';
+ import React, {useState, useRef} from 'react';
 import {
   View,                   // Basic layout container (like a <div>)
   Text,                   // Text display component
@@ -19,7 +14,7 @@ import {
 // ScreenWrapper — applies the gradient background and safe-area padding
 import ScreenWrapper from '../utils/ScreenWrapper';
 // LinearGradient — renders a smooth colour gradient (used for the CTA button)
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 // SVG primitives for custom vector icons
 import Svg, {Path, Circle, Line} from 'react-native-svg';
 // Global state hook — provides state (isDarkMode, etc.) and dispatch
@@ -442,12 +437,6 @@ export default function SignUpScreen({navigation}) {
     ? 'transparent'                                   // Ticked: no border (filled)
     : (isDark ? 'rgba(255,255,255,0.18)' : 'rgba(255,255,255,0.42)'); // Unticked border
 
-  // Perks banner colours
-  const perksBg   = isDark ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.12)'; // Banner bg
-  const perksBd   = isDark ? 'rgba(255,255,255,0.08)' : 'rgba(255,255,255,0.25)'; // Banner border
-  const perkIcon  = isDark ? '#A3E635' : '#FFFFFF'; // Tick icon colour
-  const perkTxt   = isDark ? 'rgba(255,255,255,0.65)' : 'rgba(255,255,255,0.85)'; // Perk text
-
   // ── Render ──────────────────────────────────────────────────────────────────
   return (
     <ScreenWrapper isDarkMode={isDark}>
@@ -458,10 +447,6 @@ export default function SignUpScreen({navigation}) {
 
           {/* ── Header ─────────────────────────────────────────────────────── */}
           <View style={s.header}>
-            {/* Back arrow — goes to the previous screen (Splash) */}
-            <TouchableOpacity style={s.backBtn} onPress={()=>navigation.goBack()} activeOpacity={0.7}>
-              <Text style={[s.backTxt, {color:'rgba(255,255,255,0.65)'}]}>← Back</Text>
-            </TouchableOpacity>
             <Text style={s.title}>Create Account</Text>
             <Text style={[s.subtitle, {color:subtitleCol}]}>Join SpendWise — it's free forever</Text>
           </View>
@@ -562,20 +547,6 @@ export default function SignUpScreen({navigation}) {
               isDark={isDark}
             />
 
-            {/* ── Perks banner ("Free forever", "No credit card", etc.) ──── */}
-            <View style={[s.perksRow, {backgroundColor:perksBg, borderColor:perksBd}]}>
-              {[
-                {icon:'✓', text:'Free forever'},    // No paid plan required
-                {icon:'✓', text:'No credit card'},  // No billing info needed
-                {icon:'✓', text:'50+ currencies'},  // Multi-currency support
-              ].map(({icon, text}) => (
-                <View key={text} style={s.perkItem}>
-                  <Text style={[s.perkIcon, {color:perkIcon}]}>{icon}</Text>
-                  <Text style={[s.perkTxt,  {color:perkTxt}]}>{text}</Text>
-                </View>
-              ))}
-            </View>
-
             {/* ── Sign-in link for existing users ──────────────────────── */}
             <TouchableOpacity onPress={()=>navigation.navigate('SignIn')}>
               <Text style={[s.switchTxt, {color:switchCol}]}>
@@ -605,8 +576,6 @@ export default function SignUpScreen({navigation}) {
 // ─── Styles ───────────────────────────────────────────────────────────────────
 const s = StyleSheet.create({
   header:    {paddingHorizontal:24, paddingTop:48, paddingBottom:20},        // Top section padding
-  backBtn:   {marginBottom:16},                                              // Back arrow spacing
-  backTxt:   {fontSize:14, fontWeight:'600'},                                // Back arrow text
   title:     {fontSize:34, fontWeight:'800', color:'#FFFFFF', marginBottom:8, letterSpacing:-0.5}, // "Create Account"
   subtitle:  {fontSize:15, lineHeight:22},                                   // Subtitle under title
 
@@ -626,12 +595,6 @@ const s = StyleSheet.create({
   termsErr:  {fontSize:11, fontWeight:'600', marginBottom:10, marginLeft:34},                      // Error below checkbox
 
   submitWrap:{marginTop:16, marginBottom:16},                                // Spacing around CTA button
-
-  perksRow:  {flexDirection:'row', justifyContent:'space-around', borderRadius:16,                 // Perks banner
-              borderWidth:1, padding:14, marginBottom:22},
-  perkItem:  {flexDirection:'row', alignItems:'center', gap:5},              // Individual perk item
-  perkIcon:  {fontSize:12, fontWeight:'800'},                                // ✓ icon in perks
-  perkTxt:   {fontSize:11, fontWeight:'600'},                                // Perk label
 
   switchTxt: {textAlign:'center', fontSize:14},                              // "Already have an account?"
   switchHl:  {fontWeight:'700'},                                             // "Sign in" bold link

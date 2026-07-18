@@ -1,4 +1,31 @@
 {
-  "name": "ExpenseTrackerApp2",
-  "displayName": "ExpenseTrackerApp2"
+  "expo": {
+    "name": "ExpenseTrackerApp2",
+    "slug": "expensetrackerapp2",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#080C14"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.yourcompany.expensetrackerapp2"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#080C14"
+      },
+      "edgeToEdgeEnabled": true,
+      "package": "com.yourcompany.expensetrackerapp2"
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
 }

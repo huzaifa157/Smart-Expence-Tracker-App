@@ -6,7 +6,7 @@
 import React from 'react';                                   // Core React — needed for JSX
 import {StyleSheet, View} from 'react-native';               // StyleSheet for style objects; View as the base layout primitive
 import {SafeAreaView} from 'react-native-safe-area-context'; // SafeAreaView that respects device notches / home indicators
-import LinearGradient from 'react-native-linear-gradient';   // Third-party gradient component used in light mode
+import {LinearGradient} from 'expo-linear-gradient';
 import {LIGHT, DARK} from './theme';                         // Import the raw token objects (not via useTheme) so we can use them outside a component
 
 // ─── Component definition ─────────────────────────────────────────────────────

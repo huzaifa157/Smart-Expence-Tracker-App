@@ -1,11 +1,10 @@
-// SignInScreen.js
 import React, {useState, useRef, useEffect} from 'react';
 import {
   View, Text, TextInput, TouchableOpacity, StyleSheet,
   ScrollView, KeyboardAvoidingView, Platform, Animated, Dimensions,
 } from 'react-native';
 import ScreenWrapper from '../utils/ScreenWrapper';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import Svg, {Path, Circle, Line} from 'react-native-svg';
 import {useApp} from '../context/AppContext';
 import {useTheme} from '../utils/theme';

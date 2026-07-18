@@ -1,11 +1,9 @@
-// GoalsScreen.js
-
 import React, {useState, useMemo} from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet,
   TextInput, Modal, Alert, KeyboardAvoidingView, Platform,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import Svg, {Path, Circle, Rect, G, Defs, LinearGradient as SvgLG, Stop} from 'react-native-svg';
 import ScreenWrapper from '../utils/ScreenWrapper';
 import {useApp} from '../context/AppContext';

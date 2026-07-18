@@ -1,10 +1,9 @@
-// EditProfileScreen.js
 import React, {useState} from 'react';
 import {
   View, Text, TextInput, TouchableOpacity,
   StyleSheet, ScrollView, Alert, KeyboardAvoidingView, Platform,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import Svg, {Path, Circle, Line} from 'react-native-svg';
 import ScreenWrapper from '../utils/ScreenWrapper';
 import {useApp} from '../context/AppContext';

@@ -1,4 +1,3 @@
-// SpendingPersonalityScreen.js
 import React from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions,

@@ -1,13 +1,3 @@
-// SocialAuthSheet.js
-// Shared Social Auth bottom sheet — used by both SignInScreen & SignUpScreen
-// Props:
-//   visible   : bool
-//   provider  : 'google' | 'apple'
-//   mode      : 'signin' | 'signup'
-//   isDark    : bool
-//   onClose   : () => void
-//   onSuccess : (provider, account) => void
-
 import React, {useState, useRef, useEffect} from 'react';
 import {
   View, Text, TouchableOpacity, StyleSheet,

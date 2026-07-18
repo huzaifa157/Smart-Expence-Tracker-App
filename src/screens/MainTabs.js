@@ -1,4 +1,3 @@
-// MainTabs.js — professional SVG tab icons, better color visibility
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';

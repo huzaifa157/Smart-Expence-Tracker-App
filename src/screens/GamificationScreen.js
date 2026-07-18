@@ -1,4 +1,3 @@
-// GamificationScreen.js
 import React from 'react';
 import { View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import Svg, { Path, Circle, Line, Rect, Polyline } from 'react-native-svg';

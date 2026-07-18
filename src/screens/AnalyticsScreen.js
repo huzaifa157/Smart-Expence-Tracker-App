@@ -1,10 +1,8 @@
-// AnalyticsScreen.js
-
 import React, {useState, useMemo} from 'react';
 import {
   View, Text, ScrollView, TouchableOpacity, StyleSheet, Dimensions, Modal,
 } from 'react-native';
-import LinearGradient from 'react-native-linear-gradient';
+import { LinearGradient } from 'expo-linear-gradient';
 import ScreenWrapper from '../utils/ScreenWrapper';
 import Svg, {Path, Rect, Circle, Line, Polyline, G, Defs, LinearGradient as SvgLG, Stop} from 'react-native-svg';
 import {useApp}   from '../context/AppContext';

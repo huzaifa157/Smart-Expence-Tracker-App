@@ -6,7 +6,7 @@
 
 import React from 'react';                                  // Core React — required for JSX
 import {View} from 'react-native';                          // Base layout primitive — used for dark-mode card variants
-import LinearGradient from 'react-native-linear-gradient';  // Used for gradient fills in light-mode variants
+import {LinearGradient} from 'expo-linear-gradient';
 import {LIGHT, DARK} from './theme';                        // Raw token objects — accessed directly (not via useTheme)
 
 // ─── GradientBackground ───────────────────────────────────────────────────────
